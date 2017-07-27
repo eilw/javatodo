@@ -41,10 +41,12 @@ public class ToDoController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Todo> getTodos() {
         try {
+            System.out.println("Trying to get all todos");
             return _todoDao.getAll();
         }
         catch (Exception ex) {
-            return new List;
+            System.out.println("Exception with all todos" + ex);
+            return new ArrayList<Todo>();
         }
     }
 
@@ -70,15 +72,16 @@ public class ToDoController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<?> createTodo(@RequestParam String content) {
         try {
+            System.out.println("Trying to create new todo");
             Todo todo = new Todo(content);
             _todoDao.save(todo);
         }
         catch (Exception ex) {
-
+            System.out.println("Exception with creating todo" + ex);
         }
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
-                .buildAndExpand(newTodo.get("id")).toUri();
+                .buildAndExpand(("id")).toUri();
         return ResponseEntity.created(location).build();
     }
 

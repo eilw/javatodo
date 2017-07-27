@@ -27,6 +27,10 @@ public class Todo {
         this.id = id;
     }
 
+    public Todo(String content) {
+        this.content = content;
+    }
+
     public Todo(String content, boolean completed) {
         this.content = content;
         this.completed = completed;
