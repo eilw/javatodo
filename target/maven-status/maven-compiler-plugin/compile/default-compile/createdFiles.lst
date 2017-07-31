@@ -1,8 +1,8 @@
 hello/Greeting.class
 main/java/hello/HelloWorld.class
 hello/models/Todo.class
-hello/ToDoController.class
 hello/configs/DatabaseConfig.class
 hello/Application.class
-hello/models/TodoDao.class
+hello/controller/ToDoController.class
 hello/GreetingController.class
+hello/repository/TodoDao.class

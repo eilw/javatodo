@@ -1,5 +1,6 @@
-package hello.models;
+package hello.repository;
 
+import hello.models.Todo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,8 @@ public class TodoDao {
     }
 
     public Todo getById(long id) {
-            return (Todo) getSession().load(Todo.class, id);
-        }
+            return (Todo) getSession().get(Todo.class, id);
+    }
 
     public void update(Todo todo) {
         getSession().update(todo);
